@@ -6,6 +6,7 @@ const Chat = _ => {
   const [messages, setMessages] = useState({});
   const [messageBody, setMessageBody] = useState(String());
   const [user] = useContext(UserContext);
+
   const subscribeToMessages = _ => {
     const ref = fireBaseApp.database().ref('/messages');
     ref.on('value', snapshot => {
